@@ -1,0 +1,16 @@
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    padding: 5px;
+    width: 300px;
+}
+
+.search-container input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

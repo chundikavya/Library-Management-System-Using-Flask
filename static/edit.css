@@ -1,0 +1,21 @@
+.edit-container {
+    margin-bottom: 20px;
+}
+
+.edit-container label {
+    font-weight: bold;
+}
+
+.edit-container input[type="text"], .edit-container textarea {
+    padding: 5px;
+    width: 300px;
+}
+
+.edit-container input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+

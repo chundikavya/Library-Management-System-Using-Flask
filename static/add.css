@@ -1,0 +1,20 @@
+.add-container {
+    margin-bottom: 20px;
+}
+
+.add-container label {
+    font-weight: bold;
+}
+
+.add-container input[type="text"], .add-container textarea {
+    padding: 5px;
+    width: 300px;
+}
+
+.add-container input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
