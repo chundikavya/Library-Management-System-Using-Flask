@@ -10,7 +10,7 @@ app.secret_key=secret_key
 app.config['SESSION_TYPE']='filesystem'
 
 # MySQL configurations
-mydb=mysql.connector.connect(host="localhost",user="root",password="admin",db="library_management")
+mydb=mysql.connector.connect(host="localhost",user="root",password="Mysql@pass!5",db="library_management")
 
 #Routes
 @app.route('/')
