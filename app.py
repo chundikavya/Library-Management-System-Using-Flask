@@ -162,23 +162,6 @@ def delete(nid):
     else:
         return redirect(url_for('login'))
     
-@app.route('/view/<nid>')
-def view(nid):
-    if session.get('user'):
-        cursor=mydb.cursor(buffered=True)
-        cursor.execute('select weight, height, age, gender, bmr, final_result, food_cal, username from userCalCount where cid=%s',[nid])
-        data = cursor.fetchone()
-        cursor.close()
-        diff = data[5]
-        if diff < 0:
-            flash(f'You need to take {diff} more calories')
-            return render_template('result.html',data=data)
-        else:
-            flash(f'You are taking {diff} more calories than required')
-            return render_template('result.html',data=data)
-    else:
-        return redirect(url_for('login'))
-    
 @app.route('/forgotpassword', methods=["GET","POST"])
 def forgotpassword():
     if request.method=='POST':
