@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
+  <script>
+    function myFunction(){
+      var x = document.getElementById("myInput");
+      if (x.type ==="password"){
+        x.type = "text";
+
+      } else {
+        x.type = "password";
+
+      }
+    }
+  </script>
+  <title>Login - Library Management System</title>
+</head>
+
+<body>
+  <ul class = "nav">
+    <div class = "navbar">
+      <li class ="navbar-item"><a href="{{url_for('registration')}}" class="navRef"><b>Registration</b></a></li>
+      <li class ="navbar-item"><a href="{{url_for('forgotpassword')}}" class="navRef"><b>Forgot Password</b></a></li>
+    </div>
+  </ul>
+  <center>
+    <div class ='mainbox'>
+      <div class ="box">
+        <background-image:url("C:\Users\MOULYASRI\Desktop\flask_project\static\login.png");
+      <h2>Login Details</h2>
+      <h4> Welcome to Login Page</h4>
+      <div class="formFields">
+        <form method="post">
+          <label for="username"><b>Username:</b></label><br>
+          <input type="text" name="username" placeholder="Enter Username" autocomplete="off"><br><br>
+          <label for="password"><b>Password: </b></label><br>
+          <input type="password" placeholder="Enter Password" name="password" id="myInput"><br>
+          <input type="checkbox" name="remember me" onclick="myFunction()">
+          <label for="remember me" style="font-size: 15px;">Show Password</label><br>
+          <a href="{{url_for('forgotpassword')}}" style="cursor: pointer; font-size: medium;" class="bodyLink"><b>Forgot Password?</b></a><br>
+          <button type="submit">Login</button>   
+          <h3 class="notMem">Not a member? - <a href="{{url_for('registration')}}" class="bodyLink">Register Here</a></h3>
+  
+        </form>
+      </div>
+      </div>
+    </div>
+  </center>
+</body>
+<footer>
+    <section class="footerDiv">
+        <div class="foot" style="width: 33.33%;">
+           <b><p style="margin-left: 15%; margin-bottom: 0px; margin-top: 0px; font-size: larger;">Contact Us</p><br>
+                <ul style="margin-left: 12%; margin-top: -12px; list-style-type: none;" >
+                    <li><i class="fa fa-phone" style="font-size:15px"></i> Phone: <a href="tel:7730040539" style="text-decoration: none;">8247359100</a><br></li>
+                    <li><i class="material-icons" style="font-size:15px; margin-top: 3px;">email</i> Email: <a href="mailto:lellamoulyasri@gmail.com" style="text-decoration: none;">librarymanagementapplication@gmail.com</a></li>
+                </ul>
+            </b>
+        </div>
+        <div class="foot" style="width: 85%;">
+            <b style="font-size: larger; margin-left: 170px;"></b>
+            <p style="margin-top: 0px; font-size: large; padding: 10px;"></p>
+        </div>
+    </section>
+    <h3 style="text-align: center; padding: 0px; margin-bottom: -7px;"><b>&copy;2023 All Rights Reserved</b></h3><br>
+</footer>
+  
+
+</html>

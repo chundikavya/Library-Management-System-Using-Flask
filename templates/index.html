@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <h1>Library Management System</h1>
+    
+    <h2>All Books</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book[0] }}</td>
+                <td>{{ book[1] }}</td>
+                <td>{{ book[2] }}</td>
+                <td>
+                    <a href="{{ url_for('edit', book_id=book[0]) }}">Edit</a>
+                    <form action="{{ url_for('delete', book_id=book[0]) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this book?')">
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Add a Book</h2>
+    <form action="{{ url_for('add') }}" method="post">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required><br>
+        <input type="submit" value="Add Book">
+    </form>
+
+    <h2>Search for a Book</h2>
+    <form action="{{ url_for('search') }}" method="post">
+        <input type="text" name="query" placeholder="Enter title or author" required>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
